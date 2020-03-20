@@ -66,8 +66,8 @@ class DatadirTest extends AbstractDatadirTestCase
                         'schema' => getenv('REDSHIFT_SCHEMA'),
                         'user' => getenv('REDSHIFT_USER'),
                         'password' => getenv('REDSHIFT_PASSWORD'),
-                    ]
-                ]
+                    ],
+                ],
             ]
         );
         file_put_contents($configFile, json_encode($newConfig));
