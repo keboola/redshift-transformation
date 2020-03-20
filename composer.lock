@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "39aede3656d7c2a132362370916a836f",
+    "content-hash": "0a7f87c06e25ded16f34bcb2a50828ed",
     "packages": [
         {
             "name": "jdorn/sql-formatter",
@@ -97,20 +97,21 @@
         },
         {
             "name": "keboola/php-component",
-            "version": "8.1.0",
+            "version": "8.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/keboola/php-component.git",
-                "reference": "f0b0a8f97e5ee4738ae3d7afd853288700e8430e"
+                "reference": "f6ac140f1a93f0647c1a73080385f03df96f8658"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/keboola/php-component/zipball/f0b0a8f97e5ee4738ae3d7afd853288700e8430e",
-                "reference": "f0b0a8f97e5ee4738ae3d7afd853288700e8430e",
+                "url": "https://api.github.com/repos/keboola/php-component/zipball/f6ac140f1a93f0647c1a73080385f03df96f8658",
+                "reference": "f6ac140f1a93f0647c1a73080385f03df96f8658",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
+                "keboola/common-exceptions": "^1.0",
                 "monolog/monolog": "^2.0",
                 "php": "^7.3",
                 "symfony/config": "^5.0",
@@ -148,7 +149,7 @@
                 "docker",
                 "keboola"
             ],
-            "time": "2020-03-11T09:42:05+00:00"
+            "time": "2020-03-19T09:26:43+00:00"
         },
         {
             "name": "keboola/php-datatypes",
@@ -1248,16 +1249,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "0.12.14",
+            "version": "0.12.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "37bdd26a80235d0f9045b49f4151102b7831cbe2"
+                "reference": "b2c37bda79fdb11d801ce208ce391cffc0f572e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/37bdd26a80235d0f9045b49f4151102b7831cbe2",
-                "reference": "37bdd26a80235d0f9045b49f4151102b7831cbe2",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/b2c37bda79fdb11d801ce208ce391cffc0f572e6",
+                "reference": "b2c37bda79fdb11d801ce208ce391cffc0f572e6",
                 "shasum": ""
             },
             "require": {
@@ -1297,7 +1298,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-03-02T22:29:43+00:00"
+            "time": "2020-03-17T15:39:11+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -2548,7 +2549,9 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.4"
+        "php": "^7.4",
+        "ext-pdo": "*",
+        "ext-mbstring": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "1.1.0"

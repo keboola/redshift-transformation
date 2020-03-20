@@ -1,0 +1,36 @@
+{
+    "authorization": {
+        "workspace": {
+            "host": "xxx",
+            "port": "xxx",
+            "database": "xxx",
+            "schema": "xxx",
+            "user": "xxx",
+            "password": "xxx"
+        }
+    },
+    "storage": {
+        "output": {
+            "tables": [
+                {
+                    "source": "testmetadata"
+                }
+            ]
+        }
+    },
+    "parameters": {
+        "blocks": [
+            {
+                "name": "block 1",
+                "codes": [
+                    {
+                        "name":"code 1",
+                        "script": [
+                            "create table \"testmetadata\" (name varchar(200), \"notnull\" VARCHAR(200) NOT NULL, \"numeric\" NUMERIC, \"decimal\" DECIMAL(10,2));"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

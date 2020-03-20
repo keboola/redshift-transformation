@@ -1,0 +1,1 @@
+Query "test invalid query" in "code 1" failed with error: "SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "test" LINE 1: test invalid query         ^"
