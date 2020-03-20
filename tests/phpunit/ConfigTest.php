@@ -30,6 +30,7 @@ class ConfigTest extends TestCase
                     ],
                 ],
                 'query_timeout' => 7200,
+                'allow_modify_query' => true,
             ],
         ];
         $configDefinition = new ConfigDefinition();

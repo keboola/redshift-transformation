@@ -9,6 +9,15 @@ use Keboola\RedshiftTransformation\Exception\ApplicationException;
 
 class Config extends BaseConfig
 {
+    public function getQueryTimeout(): int
+    {
+        return (int) $this->getValue(['parameters', 'query_timeout']);
+    }
+
+    public function allowModifyQuery(): bool
+    {
+        return (bool) $this->getValue(['parameters', 'allow_modify_query']);
+    }
 
     public function getBlocks(): array
     {

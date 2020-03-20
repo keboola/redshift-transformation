@@ -25,6 +25,7 @@ class RedshiftTransformation
         $this->config = $config;
         $this->logger = $logger;
         $this->connection = $this->createConnection($config->getDatabaseConfig());
+        $this->setStatementTimeout($config);
     }
 
     public function createManifestMetadata(array $tableNames, ManifestManager $manifestManager): void
@@ -88,20 +89,23 @@ class RedshiftTransformation
     private function executeQueries(string $blockName, array $queries): void
     {
         foreach ($queries as $query) {
-            $uncommentedQuery = \SqlFormatter::removeComments($query);
+            $runQuery = $query;
+            if ($this->config->allowModifyQuery()) {
+                $runQuery = \SqlFormatter::removeComments($runQuery);
 
-            // Do not execute empty queries
-            if (strlen(trim($uncommentedQuery)) === 0) {
-                continue;
+                if (strtoupper(substr($runQuery, 0, 6)) === 'SELECT') {
+                    continue;
+                }
             }
 
-            if (strtoupper(substr($uncommentedQuery, 0, 6)) === 'SELECT') {
+            // Do not execute empty queries
+            if (strlen(trim($runQuery)) === 0) {
                 continue;
             }
 
             $this->logger->info(sprintf('Running query "%s".', $this->queryExcerpt($query)));
             try {
-                $this->connection->query($uncommentedQuery);
+                $this->connection->query($runQuery);
             } catch (\Throwable $exception) {
                 $message = sprintf(
                     'Query "%s" in "%s" failed with error: "%s"',
@@ -208,5 +212,12 @@ class RedshiftTransformation
             return mb_substr($query, 0, 500, 'UTF-8') . "\n...\n" . mb_substr($query, -500, null, 'UTF-8');
         }
         return $query;
+    }
+
+    private function setStatementTimeout(Config $config): void
+    {
+        $this->connection->query(
+            sprintf('SET statement_timeout TO %s', $config->getQueryTimeout() * 100)
+        )->execute();
     }
 }
