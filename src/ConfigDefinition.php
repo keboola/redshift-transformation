@@ -19,7 +19,7 @@ class ConfigDefinition extends BaseConfigDefinition
                 ->integerNode('query_timeout')
                     ->defaultValue(7200)
                 ->end()
-                ->booleanNode('allow_modify_query')
+                ->booleanNode('allow_query_cleaning')
                     ->defaultTrue()
                 ->end()
                 ->arrayNode('blocks')

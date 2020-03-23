@@ -14,9 +14,9 @@ class Config extends BaseConfig
         return (int) $this->getValue(['parameters', 'query_timeout']);
     }
 
-    public function allowModifyQuery(): bool
+    public function allowQueryCleaning(): bool
     {
-        return (bool) $this->getValue(['parameters', 'allow_modify_query']);
+        return (bool) $this->getValue(['parameters', 'allow_query_cleaning']);
     }
 
     public function getBlocks(): array

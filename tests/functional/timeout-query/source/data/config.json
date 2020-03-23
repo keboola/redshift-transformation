@@ -10,7 +10,7 @@
         }
     },
     "parameters": {
-        "allow_modify_query": false,
+        "allow_query_cleaning": false,
         "query_timeout": 1,
         "blocks": [
             {

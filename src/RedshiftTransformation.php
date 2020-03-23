@@ -90,7 +90,7 @@ class RedshiftTransformation
     {
         foreach ($queries as $query) {
             $runQuery = $query;
-            if ($this->config->allowModifyQuery()) {
+            if ($this->config->allowQueryCleaning()) {
                 $runQuery = \SqlFormatter::removeComments($runQuery);
 
                 if (strtoupper(substr($runQuery, 0, 6)) === 'SELECT') {
