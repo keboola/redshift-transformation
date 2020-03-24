@@ -109,7 +109,7 @@ class ConfigTest extends TestCase
                         'codes' => [
                             [
                                 'name' => 'first code',
-                                'script' => []
+                                'script' => [],
                             ],
                         ],
                     ],
