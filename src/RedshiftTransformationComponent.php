@@ -20,7 +20,7 @@ class RedshiftTransformationComponent extends BaseComponent
 
         $redshiftTransformation->createManifestMetadata(
             $config->getExpectedOutputTables(),
-            new ManifestManager($this->getDataDir())
+            $this->getManifestManager()
         );
     }
 
