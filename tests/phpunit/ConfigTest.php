@@ -98,6 +98,30 @@ class ConfigTest extends TestCase
         new Config($configArray, $configDefinition);
     }
 
+    public function testDefaultTimeoutLimit(): void
+    {
+        $configArray = [
+            'authorization' => $this->getDatabaseConfig(),
+            'parameters' => [
+                'blocks' => [
+                    [
+                        'name' => 'first block',
+                        'codes' => [
+                            [
+                                'name' => 'first code',
+                                'script' => []
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ];
+
+        $configDefinition = new ConfigDefinition();
+        $config = new Config($configArray, $configDefinition);
+        $this->assertEquals(7200, $config->getQueryTimeout());
+    }
+
     public function testInvalidQueryTimeout(): void
     {
         $configArray = [
