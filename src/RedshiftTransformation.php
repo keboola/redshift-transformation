@@ -217,7 +217,7 @@ class RedshiftTransformation
     private function setStatementTimeout(Config $config): void
     {
         $this->connection->query(
-            sprintf('SET statement_timeout TO %s', $config->getQueryTimeout() * 100)
+            sprintf('SET statement_timeout TO %s', $config->getQueryTimeout() * 1000)
         )->execute();
     }
 }
