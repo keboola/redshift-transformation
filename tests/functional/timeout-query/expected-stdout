@@ -1,4 +1,3 @@
-Connecting to "pgsql:dbname=dev;port=5439;host=redshift-cluster-1.chze3dkh11mf.eu-central-1.redshift.amazonaws.com"
 Processing block "block 1"
 Processing code "code 1"
 Running query "CREATE OR REPLACE FUNCTION keboola_sleep (x float) RETURNS bool IMMUTABLE as $$     from time import sleep     sleep(x)     return True $$ LANGUAGE plpythonu;".

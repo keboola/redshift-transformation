@@ -129,7 +129,6 @@ class RedshiftTransformation
             ]
         );
 
-        $this->logger->info(sprintf('Connecting to "%s"', $dsn));
         $db = new \PDO(
             $dsn,
             $config['user'],
