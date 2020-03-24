@@ -1,0 +1,34 @@
+{
+    "authorization": {
+        "workspace": {
+            "host": "xxx",
+            "port": "xxx",
+            "database": "xxx",
+            "schema": "xxx",
+            "user": "xxx",
+            "password": "xxx"
+        }
+    },
+    "storage": {
+        "output": {
+            "tables": [
+                {
+                    "source": "invalid_testmetadata"
+                }
+            ]
+        }
+    },
+    "parameters": {
+        "blocks": [
+            {
+                "name": "block 1",
+                "codes": [
+                    {
+                        "name":"code 1",
+                        "script": []
+                    }
+                ]
+            }
+        ]
+    }
+}

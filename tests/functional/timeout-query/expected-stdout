@@ -1,0 +1,4 @@
+Processing block "block 1"
+Processing code "code 1"
+Running query "CREATE OR REPLACE FUNCTION keboola_sleep (x float) RETURNS bool IMMUTABLE as $$     from time import sleep     sleep(x)     return True $$ LANGUAGE plpythonu;".
+Running query "select keboola_sleep(2.0);".

@@ -1,0 +1,30 @@
+{
+    "authorization": {
+        "workspace": {
+            "host": "xxx",
+            "port": "xxx",
+            "database": "xxx",
+            "schema": "xxx",
+            "user": "xxx",
+            "password": "xxx"
+        }
+    },
+    "parameters": {
+        "blocks": [
+            {
+                "name": "block 1",
+                "codes": [
+                    {
+                        "name":"code 1",
+                        "script": [
+                            "",
+                            "SELECT 1",
+                            "select 1",
+                            "# create table if not exists \"test\" (id int)"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

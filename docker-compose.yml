@@ -1,0 +1,19 @@
+version: '2'
+services:
+  app: &base
+    build:
+      context: .
+    image: keboola/redshift-transformation
+    environment:
+      - REDSHIFT_HOST
+      - REDSHIFT_PORT
+      - REDSHIFT_DATABASE
+      - REDSHIFT_SCHEMA
+      - REDSHIFT_USER
+      - REDSHIFT_PASSWORD
+      - KBC_RUNID
+  dev:
+    <<: *base
+    volumes:
+      - ./:/code
+      - ./data:/data

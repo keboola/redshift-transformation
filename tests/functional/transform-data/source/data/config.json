@@ -1,0 +1,45 @@
+{
+    "authorization": {
+        "workspace": {
+            "host": "xxx",
+            "port": "xxx",
+            "database": "xxx",
+            "schema": "xxx",
+            "user": "xxx",
+            "password": "xxx"
+        }
+    },
+    "parameters": {
+        "blocks": [
+            {
+                "name": "block 1",
+                "codes": [
+                    {
+                        "name":"code 1",
+                        "script": [
+                            "CREATE TABLE IF NOT EXISTS \"output\" (\"name\" VARCHAR(200),\"usercity\" VARCHAR(200));",
+                            "INSERT INTO \"output\" VALUES ('ondra', 'liberec')"
+                        ]
+                    },
+                    {
+                        "name":"code 2",
+                        "script": [
+                            "INSERT INTO \"output\" VALUES ('odin', 'brno')"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "block 2",
+                "codes": [
+                    {
+                        "name":"code 3",
+                        "script": [
+                            "INSERT INTO \"output\" VALUES ('najlos', 'liberec')"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

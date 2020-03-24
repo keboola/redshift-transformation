@@ -1,0 +1,30 @@
+{
+    "authorization": {
+        "workspace": {
+            "host": "xxx",
+            "port": "xxx",
+            "database": "xxx",
+            "schema": "xxx",
+            "user": "xxx",
+            "password": "xxx"
+        }
+    },
+    "parameters": {
+        "allow_query_cleaning": false,
+        "query_timeout": 1,
+        "blocks": [
+            {
+                "name": "block 1",
+                "codes": [
+                    {
+                        "name":"code 1",
+                        "script": [
+                            "CREATE OR REPLACE FUNCTION keboola_sleep (x float) RETURNS bool IMMUTABLE as $$\n    from time import sleep\n    sleep(x)\n    return True\n$$ LANGUAGE plpythonu;",
+                            "select keboola_sleep(2.0);"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

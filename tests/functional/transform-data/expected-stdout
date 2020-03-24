@@ -1,0 +1,9 @@
+Processing block "block 1"
+Processing code "code 1"
+Running query "CREATE TABLE IF NOT EXISTS "output" ("name" VARCHAR(200),"usercity" VARCHAR(200));".
+Running query "INSERT INTO "output" VALUES ('ondra', 'liberec')".
+Processing code "code 2"
+Running query "INSERT INTO "output" VALUES ('odin', 'brno')".
+Processing block "block 2"
+Processing code "code 3"
+Running query "INSERT INTO "output" VALUES ('najlos', 'liberec')".
