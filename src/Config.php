@@ -9,6 +9,8 @@ use Keboola\RedshiftTransformation\Exception\ApplicationException;
 
 class Config extends BaseConfig
 {
+    public const REDSHIFT_DEFAULT_PORT = 5439;
+
     public function getQueryTimeout(): int
     {
         return (int) $this->getValue(['parameters', 'query_timeout']);
