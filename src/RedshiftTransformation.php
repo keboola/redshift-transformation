@@ -162,7 +162,7 @@ class RedshiftTransformation
         /** @var \PDOStatement $columnsQuery */
         $columnsQuery = $this->connection->query(
             $solumnSql = sprintf(
-                'SELECT %s FROM information_schema.columns WHERE table_name IN (%s)',
+                'SELECT %s FROM information_schema.columns WHERE table_name IN (%s) ORDER BY ordinal_position',
                 implode(', ', $nameColumns),
                 implode(', ', array_map(function ($item) {
                     return $this->connection->quote($item);
