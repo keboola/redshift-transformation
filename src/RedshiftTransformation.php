@@ -124,7 +124,7 @@ class RedshiftTransformation
             'pgsql:dbname=%s;port=%s;host=%s',
             [
                 $config['database'],
-                $config['port'],
+                $config['port'] ?? Config::REDSHIFT_DEFAULT_PORT,
                 $config['host'],
             ]
         );
