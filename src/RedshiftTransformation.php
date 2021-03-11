@@ -180,16 +180,21 @@ class RedshiftTransformation
                     'columns' => [],
                 ];
             }
-            $tableDefs[$column['table_name']]['columns'][] = [
+
+            $columnArr = [
                 'name' => $column['column_name'],
-                'length' => [
-                    'character_maximum' => $column['character_maximum_length'],
-                    'numeric_precision' => $column['numeric_precision'],
-                    'numeric_scale' => $column['numeric_scale'],
-                ],
                 'nullable' => (trim($column['is_nullable']) === 'NO') ? false : true,
                 'type' => $column['data_type'],
             ];
+
+            if (!in_array(strtoupper($column['data_type']), Config::IGNORE_LENGTH_FOR_COLUMNS)) {
+                $columnArr['length'] = [
+                    'character_maximum' => $column['character_maximum_length'],
+                    'numeric_precision' => $column['numeric_precision'],
+                    'numeric_scale' => $column['numeric_scale'],
+                ];
+            }
+            $tableDefs[$column['table_name']]['columns'][] = $columnArr;
         }
 
         $missingTables = array_diff($sourceTables, array_keys($tableDefs));
