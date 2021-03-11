@@ -11,6 +11,8 @@ class Config extends BaseConfig
 {
     public const REDSHIFT_DEFAULT_PORT = 5439;
 
+    public const IGNORE_LENGTH_FOR_COLUMNS = ['INTEGER', 'SMALLINT', 'BIGINT'];
+
     public function getQueryTimeout(): int
     {
         return (int) $this->getValue(['parameters', 'query_timeout']);
