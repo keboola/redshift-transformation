@@ -94,14 +94,12 @@ class DatadirTest extends AbstractDatadirTestCase
     private function getTableNames(): array
     {
         $tables = $this->connection->query(
-            'SELECT table_name FROM information_schema.tables WHERE table_schema = \'public\';'
+            'SELECT table_name FROM information_schema.tables WHERE table_schema = current_schema();'
         )->fetchAll(\PDO::FETCH_ASSOC);
 
-        $tableNames = array_map(function ($item) {
+        return array_map(function ($item) {
             return $item['table_name'];
         }, $tables);
-
-        return $tableNames;
     }
 
     private function dumpTableData(string $tableName, string $tmpFolder): void

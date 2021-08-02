@@ -7,6 +7,7 @@ namespace Keboola\RedshiftTransformation;
 use Keboola\Component\Manifest\ManifestManager;
 use Keboola\Component\Manifest\ManifestManager\Options\OutTableManifestOptions;
 use Keboola\Component\UserException;
+use Keboola\Datatype\Definition\Exception\InvalidLengthException;
 use Keboola\Datatype\Definition\Exception\InvalidTypeException;
 use Keboola\Datatype\Definition\GenericStorage as GenericDatatype;
 use Keboola\Datatype\Definition\Redshift;
@@ -42,6 +43,12 @@ class RedshiftTransformation
                         $column['type'],
                         array_intersect_key($column, $datatypeKeys)
                     );
+                } catch (InvalidLengthException $e) {
+                    unset($column['length']);
+                    $datatype = new Redshift(
+                        $column['type'],
+                        array_intersect_key($column, $datatypeKeys)
+                    );
                 } catch (InvalidTypeException $e) {
                     unset($column['length']);
                     $datatype = new GenericDatatype(
@@ -64,8 +71,7 @@ class RedshiftTransformation
             $tableManifestOptions
                 ->setMetadata($tableMetadata)
                 ->setColumns($columnNames)
-                ->setColumnMetadata($columnsMetadata)
-            ;
+                ->setColumnMetadata($columnsMetadata);
             $manifestManager->writeTableManifest($tableStructure['name'], $tableManifestOptions);
         }
     }

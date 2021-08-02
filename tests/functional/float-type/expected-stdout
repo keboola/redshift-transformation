@@ -1,0 +1,4 @@
+Processing block "block 1"
+Processing code "code 1"
+Running query "CREATE TABLE "test" (mycolumn FLOAT);".
+Running query "INSERT INTO "test" VALUES (12.3);".
