@@ -6,7 +6,7 @@ env:
   REDSHIFT_HOST: "testing.cx4py8yq28xb.us-east-1.redshift.amazonaws.com"
   REDSHIFT_PORT: "5439"
   REDSHIFT_DATABASE: "gh_actions_transformation_tests"
-  REDSHIFT_SCHEMA: "gh_actions_transformation_tests"
+  REDSHIFT_SCHEMA: "public"
   REDSHIFT_USER: "gh_actions_transformation_tests"
   REDSHIFT_PASSWORD: ${{ secrets.REDSHIFT_PASSWORD }}
 
