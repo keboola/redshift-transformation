@@ -1,1 +1,1 @@
-{"columns":["mycolumn"],"metadata":[{"key":"KBC.name","value":"test"}],"column_metadata":{"mycolumn":[{"key":"KBC.datatype.type","value":"double precision"},{"key":"KBC.datatype.nullable","value":true},{"key":"KBC.datatype.basetype","value":"STRING"}]}}
+{"columns":["mycolumn"],"metadata":[{"key":"KBC.name","value":"test"}],"column_metadata":{"mycolumn":[{"key":"KBC.datatype.type","value":"double precision"},{"key":"KBC.datatype.nullable","value":true},{"key":"KBC.datatype.basetype","value":"FLOAT"}]}}

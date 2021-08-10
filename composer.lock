@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0a7f87c06e25ded16f34bcb2a50828ed",
+    "content-hash": "6e4fc6d4b105532cde65c4e1e407b000",
     "packages": [
         {
             "name": "jdorn/sql-formatter",
@@ -153,20 +153,24 @@
         },
         {
             "name": "keboola/php-datatypes",
-            "version": "4.4.0",
+            "version": "4.11.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/keboola/php-datatypes.git",
-                "reference": "96e5575f39f9e47e75863f3c03a735293f28ba7c"
+                "reference": "0d38717bdef0956b33bf47489254271a88b96c16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/keboola/php-datatypes/zipball/96e5575f39f9e47e75863f3c03a735293f28ba7c",
-                "reference": "96e5575f39f9e47e75863f3c03a735293f28ba7c",
+                "url": "https://api.github.com/repos/keboola/php-datatypes/zipball/0d38717bdef0956b33bf47489254271a88b96c16",
+                "reference": "0d38717bdef0956b33bf47489254271a88b96c16",
                 "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "~0.4",
+                "php-parallel-lint/php-parallel-lint": "^1.1",
                 "phpstan/phpstan": "~0.9",
                 "phpunit/phpunit": "^5.0",
                 "squizlabs/php_codesniffer": "^2.6"
@@ -178,13 +182,21 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
             "authors": [
                 {
-                    "name": "Ondřej Hlaváček",
-                    "email": "ondrej.hlavacek@keboola.com"
+                    "name": "Keboola",
+                    "email": "devel@keboola.com"
                 }
             ],
-            "time": "2020-03-19T08:11:27+00:00"
+            "description": "PHP datatypes for databases",
+            "support": {
+                "issues": "https://github.com/keboola/php-datatypes/issues",
+                "source": "https://github.com/keboola/php-datatypes/tree/4.11.2"
+            },
+            "time": "2021-08-10T13:45:27+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -2554,5 +2566,5 @@
         "ext-mbstring": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.1.0"
 }
