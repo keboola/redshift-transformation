@@ -16,7 +16,7 @@
         "jdorn/sql-formatter": "^1.2",
         "keboola/common-exceptions": "^1.0",
         "keboola/php-component": "^8.1",
-        "keboola/php-datatypes": "^4.4",
+        "keboola/php-datatypes": "^4.11.2",
         "psr/log": "^1.1",
         "symfony/config": "^5.0"
     },
